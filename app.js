@@ -1,7 +1,7 @@
 const express=require('express');
 const app=express();
 const path=require('path');
-const port=80;
+const port= process.env.PORT || 80;
 const mongoose=require('mongoose');
 // mongoose.connect('mongodb://localhost:27017/mobiles');
 mongoose.connect('mongodb+srv://lokesh96:Hari0000@cluster0.7nwtzsv.mongodb.net/mydatabase?retryWrites=true&w=majority').then(()=>{
