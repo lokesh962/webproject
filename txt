@@ -1,0 +1,61 @@
+console.log('raw html');
+
+const express=require('express');
+const fs = require('fs');
+const app=express();
+const path=require('path');
+const port=80;
+
+//EXPRESS SPECIFIC CONFIG...
+
+//serving static file
+app.use('/static',express.static('static'));
+app.use(express.urlencoded());
+
+
+//PUG SPECIFIC CONFIG...
+
+//set template engline as pug
+app.set('view engine','pug');
+
+//set the views directory
+app.set('views',path.join(__dirname,'template'));
+
+
+//ENDPOINTS
+
+app.get('/',(req,res)=>{
+    const con="this is lokesh"
+    const params=
+    {
+        'title':"GYM WEBSITE",
+        'content':con
+    };
+res.status(200).render('index.pug',params);
+});
+
+
+app.post('/',(req,res)=>{
+    console.log(req.body);
+    myname =req.body.name
+    age=req.body.age
+    gender=req.body.gender
+    address=req.body.address
+    more=req.body.more
+
+    let outputToWrite= `The name of client is ${myname}.${age} Years Old.Gender is ${gender}.address is ${address}.more about  - ${more}`
+    
+    fs.writeFileSync('output.txt',outputToWrite)
+// console.log(outputToWrite);
+
+    const params=
+    {
+        'message':"YOUR FORM HAS BEEN SENT SUCCESSFULLY"
+    };
+    res.status(200).render('index.pug',params)
+})
+
+//START SERVER
+app.listen(port,()=>{
+    console.log('running');
+});

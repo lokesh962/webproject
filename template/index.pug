@@ -1,0 +1,49 @@
+doctype html
+html 
+    head  
+        title LKH DANCE WEBSITE 
+        style
+            include ../static_folder/style.css
+    body
+        nav#navbar
+            ul
+                div#logo
+                    img(src='/static_folder/logo.png')
+                    |LDA
+                li #[a(href="/") Home]
+                li #[a(href="/") About]
+                li #[a(href="/") Class Info]
+                li #[a(href="/") Services]
+                li #[a(href="/contact") Contact Us]
+
+        section#intro 
+            div WELCOME TO LKH DANCE ACADEMY 
+            div.small DANCE TO ENJOY 
+        section#mission
+            h2 OUR MISSION
+            div.card
+                h3  Dance Perfection  
+                div.card-content
+                    p This is best Dance Academy
+            div.card
+                h3  Dance The Way You Like 
+                div.card-content
+                    p This is best Dance Academy
+            div.card
+                h3  Expert Teaching 
+                div.card-content
+                    p This is best Dance Academy
+        section#sponser
+            h2 OUR SPONSERS
+            div#divsponsers
+                img(src="/static_folder/1.png", alt="sponser image" class="spimg")
+                img(src="/static_folder/2.png", alt="sponser image" class="spimg")
+                img(src="/static_folder/3.jpg", alt="sponser image" class="spimg")
+                img(src="/static_folder/4.png", alt="sponser image" class="spimg")
+        
+
+        footer#footer 
+            |COPYRIGHT © 2022 | ALL RIGHT RESERVED 
+
+        script 
+        include ../static_folder/index.js

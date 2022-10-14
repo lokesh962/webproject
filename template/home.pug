@@ -1,0 +1,34 @@
+extends base.pug
+
+block scripts 
+    script(src="/static_folder/index.js")
+
+block style
+    style 
+        include ../static_folder/style.css
+
+block content 
+        section#intro 
+            div WELCOME TO LKH DANCE ACADEMY 
+            div.small DANCE TO ENJOY 
+        section#mission
+            h2 OUR MISSION
+            div.card
+                h3  Dance Perfection  
+                div.card-content
+                    p This is best Dance Academy
+            div.card
+                h3  Dance The Way You Like 
+                div.card-content
+                    p This is best Dance Academy
+            div.card
+                h3  Expert Teaching 
+                div.card-content
+                    p This is best Dance Academy
+        section#sponser
+            h2 OUR SPONSERS
+            div#divsponsers
+                img(src="/static_folder/1.png", alt="sponser image" class="spimg")
+                img(src="/static_folder/2.png", alt="sponser image" class="spimg")
+                img(src="/static_folder/3.jpg", alt="sponser image" class="spimg")
+                img(src="/static_folder/4.png", alt="sponser image" class="spimg")
